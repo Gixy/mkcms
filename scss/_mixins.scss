@@ -1,0 +1,91 @@
+@mixin placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin selection {
+	&::-moz-selection {
+		@content;
+	}
+
+	&::selection {
+		@content;
+	}
+}
+
+@mixin font-main($font-weight: 400) {
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-weight: $font-weight;
+}
+
+@mixin font-secondary($font-weight: 400) {
+	font-family: 'Raleway';
+	-webkit-font-smoothing: antialiased;
+	font-weight: $font-weight;
+}
+
+@mixin font-awesome($font-size: $font-base-size) {
+	font-family: 'fontAwesome';
+	-webkit-font-smoothing: antialiased;
+	font-size: $font-size;
+}
+
+@mixin circles($dimentions: 45px, $align: center) {
+	width: $dimentions;
+	height: $dimentions;
+	line-height: $dimentions;
+	border-radius: 50%;
+	text-align: $align;
+	display: block;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}

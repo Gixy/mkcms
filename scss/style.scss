@@ -1,0 +1,460 @@
+@import '_reset';
+@import 'bootstrap';
+@import '_bootstrap-variables';
+@import '_mixins';
+@import '_base';
+@import '_font-awesome';
+
+body{
+    @include font-main();
+}
+
+#header{
+    background-color: $brand-primary;
+
+    .header-box{
+        @extend .container;
+        height: 50px;
+
+        ul.desktop-menu{
+            @extend .clearfix;
+            @extend .col-sm-10;
+            line-height: 50px;
+            color: $white;
+
+            .menu-item-box{
+                color: $white;
+
+                .menu-item{
+                    text-align: center;
+                    @extend .col-sm-3;
+
+                }
+            }
+        }
+
+        .brand-logo-box{
+            @extend .col-sm-2;
+            margin-top: 10px;
+            height: 40px;
+
+        }
+    }
+}
+
+#content{
+    background-color: $white;
+
+    .content-box{
+        padding: 30px;
+        @extend .container;
+
+    }
+}
+
+#manage-posts{
+     background-color: $white;
+     padding-top: 75px;
+     padding-bottom: 115px;
+
+    .manage-posts-box{
+        background-color: $white;
+        position: relative;
+        @extend .container;
+        border-radius: 5px;
+        height: 800px;
+        padding: 30px;
+
+        .manage-header{
+            @extend .col-sm-12;
+            margin-left: 15px;
+            line-height: 80px;
+            font-size: $font-base-size + 12;
+            color: $brand-primary;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            width: 100%;
+
+            .add-post-box{
+                float: right;
+                color: $brand-primary;
+
+                i{
+                    font-size: $font-base-size + 2;
+                }
+            }
+        }
+
+        .left{
+            @extend .col-sm-4;
+
+            .tab-box{
+                height: 65px;
+
+                .tab{
+                    @extend .clearfix;
+                    border-radius: 3px;
+
+
+                    .post-image{
+                        height: 100%;
+                        @extend .col-sm-4;
+
+                    }
+                    .post-title{
+                        @extend .col-sm-8;
+                        line-height: 65px;
+                    }
+                }
+                &:hover{
+
+                    .tab{
+                        background-color: lighten($gray-light, 50);
+                    }
+                }
+            }
+            .load-more-box{
+
+                .load-more{
+                    text-align: center;
+                    margin: 0 auto;
+                    height: 65px;
+                    line-height: 65px;
+                    color: $brand-primary;
+
+                    i{
+                        @include transition( 550ms );
+                        color: $brand-primary;
+
+                    }
+
+                    &:hover{
+                        background-color: lighten($gray-light, 50);;
+
+                        i{
+                            @extend .fa-spin;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right{
+            @extend .col-sm-8;
+
+            .post{
+                height: 100%;
+
+                .alter-post-title{
+                    width: 100%;
+                    margin: 15px 0;
+                    line-height: 30px;
+                    padding-left: 5px;
+
+                    @include placeholder(){
+
+                        color: $gray-light;
+                    };
+                }
+
+                .alter-post-content{
+                    height: 100% !important;
+                }
+                .submit-alter-post{
+                    background-color: $brand-success;
+                    color: $white;
+                    border: 1px solid $brand-success;
+                    border-radius: 3px;
+                    height: 40px;
+                    width: 100%;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+#footer{
+    background-color: $brand-primary;
+    left:0px;
+    bottom:0px;
+    height:40px;
+    width:100%;
+
+    .footer-box{
+        @extend .container;
+        position: relative;
+
+        .sign-in-box{
+            position: absolute;
+            left: 5px;
+            top: 0;
+
+            .signin{
+
+                font-size: $font-base-size - 4;
+                border: 1px solid $white;
+                border-radius: 10px;
+                padding: 0 13px;
+                margin-top: 7px;
+                width: 75px;
+                color: $white;
+
+                &::before{
+                    content: "\f007";
+                    font-family: FontAwesome;
+                }
+            }
+        }
+        .copyright{
+            text-align: center;
+            margin-top: 5px;
+            display: none;
+            color: $white;
+        }
+
+        .register-box{
+            position: absolute;
+            left: 90px;
+            top: 0;
+
+            .register{
+
+
+
+                font-size: $font-base-size - 4;
+                border: 1px solid $white;
+                border-radius: 10px;
+                padding: 0 13px;
+                margin-top: 7px;
+                width: 94px;
+                color: $white;
+
+                &::before{
+                    content: "\f234";
+                    font-family: FontAwesome;
+                }
+            }
+        }
+        .logout-box{
+            position: absolute;
+            left: 5px;
+            top: 0;
+
+            .logout{
+
+                font-size: $font-base-size - 4;
+                border: 1px solid $white;
+                border-radius: 10px;
+                padding: 0 13px;
+                margin-top: 7px;
+                width: 94px;
+                color: $white;
+
+                &::before{
+                    content: "\f08b";
+                    font-family: FontAwesome;
+                }
+            }
+        }
+        .manage-box{
+            position: absolute;
+            left: 110px;
+            top: 0;
+
+            .manage{
+
+                font-size: $font-base-size - 4;
+                border: 1px solid $white;
+                border-radius: 10px;
+                padding: 0 13px;
+                margin-top: 7px;
+                width: 97px;
+                color: $white;
+
+                &::before{
+                    content: "\f085";
+                    font-family: FontAwesome;
+                }
+            }
+        }
+    }
+}
+
+body.login{
+    background-color: $brand-primary;
+    padding: 0;
+    margin: 0;
+    display: block;
+
+    a.brand-logo-box{
+
+        img.brand-logo{
+            display: block;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 60px;
+            width: auto;
+            background-color: $brand-primary;
+        }
+    }
+
+    form.login_form{
+
+        width: 400px;
+        margin: 0 auto;
+        background-color: $white;
+        padding: 40px;
+        border-radius: 3px;
+        display: block;
+
+        .ajax{
+            text-align: center;
+            background-color: $brand-success;
+            border-radius: 3px;
+            color: #357a35;
+
+        }
+
+        input[type="text"], input[type="password"]{
+            width: 100%;
+            border: 1px solid $gray-lighter;
+            margin: 5px 0;
+            height: 40px;
+            border-radius: 3px;
+            color: $gray-light;
+            padding-left: 15px;
+
+            @include placeholder(){
+                color: $gray-light;
+            }
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            border: 1px solid $brand-success;
+            background-color: $brand-success;
+            margin-top: 15px;
+            padding: 15px;
+            color: $white;
+            border-radius: 3px;
+
+        }
+
+        legend{
+            text-align: center;
+            border: none;
+
+            &::before{
+
+            }
+        }
+    }
+
+    .forgot{
+        text-align: center;
+        color: $white;
+
+        a{
+            color: $white;
+        }
+    }
+}
+
+body.signup{
+    background-color: $brand-primary;
+
+    a.brand-logo-box{
+
+        img.brand-logo{
+            display: block;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 60px;
+            width: auto;
+            background-color: $brand-primary;
+        }
+    }
+
+    form.sign-up-form{
+        margin: 0 auto;
+        width: 400px;
+        background-color: $white;
+        padding: 40px;
+        border-radius: 3px;
+
+        legend{
+            text-align: center;
+            border: none;
+        }
+
+        #ajax{
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"]{
+            width: 100%;
+            border: 1px solid $gray-lighter;
+            border-radius: 3px;
+            height: 40px;
+            color: $gray-light;
+            margin: 5px 0;
+            padding-left: 10px;
+
+            @include placeholder(){
+                color: $gray-light;
+                padding: 5px;
+            }
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            border-radius: 3px;
+            color: $white;
+            background-color: $brand-success;
+            border: none;
+            margin-top: 10px;
+            padding: 15px;
+        }
+
+        ul.errors{
+            background-color: $brand-danger;
+            border-radius: 3px;
+            padding: 5px 0;
+
+            li{
+                color: $white;
+                text-align: center;
+
+                &::before{
+                    content: "";
+                    font-family: FontAwesome;
+                }
+            }
+            li.error-sign{
+                text-align: center;
+                font-size: $font-base-size + 15;
+            }
+        }
+        .joined{
+            text-align: center;
+            background-color: $brand-success;
+            color: $white;
+            border-radius: 3px;
+            padding: 5px;
+        }
+    }
+
+    .existing{
+        text-align: center;
+        color: $white;
+
+        a{
+            color: $white;
+        }
+    }
+}
+
+@import '_responsive';
