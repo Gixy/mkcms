@@ -10,34 +10,20 @@ body{
 }
 
 #header{
-    background-color: $brand-primary;
+    background-color: $brand-secondary;
+    height: 400px;
 
     .header-box{
         @extend .container;
-        height: 50px;
+        width: 80%;
 
-        ul.desktop-menu{
-            @extend .clearfix;
-            @extend .col-sm-10;
-            line-height: 50px;
-            color: $white;
-
-            .menu-item-box{
-                color: $white;
-
-                .menu-item{
-                    text-align: center;
-                    @extend .col-sm-3;
-
-                }
+        a{
+        .profile-image{
+            @extend .col-sm-3;
+            height: 400px;
+            background-position: center;
+            background-size: cover;
             }
-        }
-
-        .brand-logo-box{
-            @extend .col-sm-2;
-            margin-top: 10px;
-            height: 40px;
-
         }
     }
 }
@@ -45,9 +31,8 @@ body{
 #content{
     background-color: $white;
 
+
     .content-box{
-        padding: 30px;
-        @extend .container;
 
     }
 }
